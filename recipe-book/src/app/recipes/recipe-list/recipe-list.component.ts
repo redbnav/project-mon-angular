@@ -5,9 +5,12 @@ import { Recipe } from '../recipe';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-recipes: Recipe[] = [];
+recipes: Recipe[] = [
+  new Recipe('Schnitzel', 'Very tasty', 'https://thumb7.shutterstock.com/display_pic_with_logo/324901/482743804/stock-photo-schnitzel-and-fried-potatoes-on-dark-plate-top-view-482743804.jpg', []),
+  new Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [])
+];
+
 @Output() recipeSelected = new EventEmitter();
-recipe = new Recipe('Dummy','Dummy','http://vignette4.wikia.nocookie.net/scribblenauts/images/4/42/Crash_Test_Dummy.png/revision/latest?cb=20130309213400');
 
   constructor() { }
 

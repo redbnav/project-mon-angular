@@ -8,5 +8,24 @@
 <h1>Structural Directives</h1>
 <h2>*ngIf</h2>
 <div *ngIf="switch" >Conditional Text</div> <!-- Structural directive are called by using *  -->
+<ng-template [ngIf]="switch">
+    <div>
+        Conditional Template Text
+    </div>
+</ng-template>
+
 <button (click)="onSwitch() ">Switch</button>
+<h2>*ngFor</h2>
+<ul>
+    <li *ngFor="let item of items; let i = 'index'">{{item}} (index: i) </li>
+</ul>
+<hr>
+<h2>ngSwitch</h2>
+<div [ngSwitch]="value">
+    <p *ngSwitchCase="10">10</p>
+    <p *ngSwitchCase="100">100</p>
+    <p *ngSwitchDefault>Default</p>
+</div>
+<h2>Unless Directive</h2>
+<div *unless="switch">Conditional Unless text</div>
 <br><br><br>
