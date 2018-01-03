@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2>Search</h2>
+                </div>
+                <div class="panel-body">
+                    <form class="form-inline" method="post" action="/notes">
+                        <div class="form-group">
+                            <label for="option">Option</label>
+                            <select class="form-control" name="searchfield">
+                                <option>Please Select</option>
+                                <option value="ADV_YEAR">Year</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="search">Search</label>
+                            <input type="text" class="form-control" id="search" name="search" placeholder="Please enter search key.">
+                        </div>
+                        <button type="submit" class="btn btn-default" id="searchBtn">Search</button>
+                    </form>
+                </div>
+                <div class="panel panel-default">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>PIPELINE</th>
+                                <th>RM</th>
+                                <th>ADV_YEAR</th>
+                                <th>PRODUCT</th>
+                                <th>PRODUCT_PIPELINE_ID</th>
+                                <th>GERMPLASM_ID</th>
+                                <th>PREV_PS</th>
+                                <th>CURRENT_PS</th>
+                                <th>MAX_PS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% sampledata.forEach(function(data){ %>
+                                <tr>
+                                    <td><%= data.PIPELINE %></td>
+                                    <td><%= data.RM %></td>
+                                    <td><%= data.ADV_YEAR %></td>
+                                    <td><%= data.PRODUCT %></td>
+                                    <td><%= data.PRODUCT_PIPELINE_ID %></td>
+                                    <td><%= data.GERMPLASM_ID %></td>
+                                    <td><%= data.PREV_PS %></td>
+                                    <td><%= data.CURRENT_PS %></td>
+                                    <td><%= data.MAX_PS %></td>
+                                </tr>
+                            <% })%>
+                        </tbody>    
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
